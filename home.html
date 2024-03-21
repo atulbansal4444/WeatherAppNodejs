@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+            * {
+                padding: 0;
+                margin: 0;
+                font-family: "Quicksand", sans-serif;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                height: 100vh;
+                width: 100vw;
+                background: #f3f2ef;
+            }
+
+            html,
+            body {
+                font-size: 63%;
+                height: 100%;
+            }
+
+            html {
+                background: #eee;
+            }
+
+            .box {
+                height: 60vh;
+                width: 20vw;
+                border-radius: 0.5rem;
+                box-shadow: 0 0.2rem 5rem rgba(0, 0, 0, 0.2);
+                position: relative;
+                overflow: hidden;
+                transform: translate3d(0, 0, 0);
+                background: #a5bbdd;
+                min-width: 20rem;
+                min-height: 35rem;
+            }
+
+            .wave {
+                opacity: 0.3;
+                position: absolute;
+                top: 120%;
+                left: 50%;
+                background: white;
+                width: 50rem;
+                height: 50rem;
+                margin-top: -25rem;
+                margin-left: -25rem;
+                transform-origin: 50% 48%;
+                border-radius: 43%;
+                animation: drift 3000s infinite linear;
+                z-index: 1;
+            }
+
+            .wave.-three {
+                animation: drift 5000s infinite linear;
+                z-index: 2 !important;
+                opacity: 0.2;
+            }
+
+            .wave.-two {
+                animation: drift 7000s infinite linear;
+                z-index: 3 !important;
+                opacity: 0.1;
+            }
+
+            .box:after {
+                content: "";
+                display: block;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 11;
+                transform: translate3d(0, 0, 0);
+            }
+
+            @keyframes drift {
+                from {
+                    transform: rotate(0deg);
+                }
+                from {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .info {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 45%;
+                z-index: 4;
+            }
+
+            .location {
+                margin-top: 1.5rem;
+                text-align: center;
+                font-weight: 800;
+                font-size: 3rem;
+                font-weight: 600;
+            }
+
+            #date {
+                text-align: center;
+                margin-top: 0.5rem;
+                color: #57606f;
+                font-size: 1.2rem;
+                font-weight: 300;
+                text-transform: uppercase;
+            }
+
+            .temp {
+                text-align: center;
+                margin-top: 2.5rem;
+                font-size: 3rem;
+            }
+
+            .tempmin_max {
+                text-align: center;
+                margin-top: 0.3rem;
+                font-size: 1.2rem;
+                font-weight: 300;
+                color: #57606f;
+            }
+
+            #weathercon {
+                height: 55%;
+                display: flex;
+                font-size: 3rem;
+                justify-content: center;
+                align-items: center;
+            }
+
+        </style>
+        <title>Wather App</title>
+    </head>
+    <body>
+        <div class="box">
+            <div class="wave -one"></div>
+            <div class="wave -two"></div>
+            <div class="wave -three"></div>
+
+            <div id="weathercon">
+                <i class="fa-solid fa-sun fa-beat-fade" style="color: #FFD43B;"></i>
+            </div>
+
+            <div class="info">
+                <h2 class="location">
+                    <i class="fa-solid fa-street-view fa-beat-fade"></i>
+                    Pune, In
+                </h2>
+                <p id="date">WED | OCT 23 | 10:49 AM</p>
+                <h1 class="temp">26 C</h1>
+                <h3 class="tempmin_max">Min | Max</h3>
+            </div>
+        </div>
+    </body>
+</html>
